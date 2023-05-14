@@ -18,7 +18,8 @@ apiUrl: string;
     })
   };
 
-   createUser(user: any){
-    return this.httpClient.post(this.apiUrl + "/auth/signup/jeune",user, this.httpOptions)
-   }
+  createUser(user: any) {
+    console.log('user data sent to API:', user);
+    return this.httpClient.post('api/auth/signup/jeune', user, this.httpOptions)
+  } 
 }

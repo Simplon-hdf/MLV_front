@@ -9,7 +9,10 @@ import { Router } from '@angular/router';
   styleUrls: ['./register.component.css'],
 })
 export class RegisterComponent {
-  constructor(private apiService: ApiService, private router: Router) {}
+  constructor(
+    private apiService: ApiService,
+    private router: Router,
+  ) {}
 
   form = new FormGroup({
     nom: new FormControl('', Validators.required),
@@ -22,19 +25,21 @@ export class RegisterComponent {
     adresse: new FormControl('', Validators.required),
   });
 
-  onSubmit(){
-    const user = {
-      nom: this.form.value.nom,
-      prenom: this.form.value.prenom,
-      date_naissance: this.form.value.date_naissance,
-      email: this.form.value.email,
-      mot_de_passe: this.form.value.mot_de_passe,
-      telephone: this.form.value.telephone,
-      nationalite: this.form.value.nationalite,
-      adresse: this.form.value.adresse
-    }
-   
-    this.apiService.createUser(JSON.stringify(user)).subscribe((response) => console.log(response));
-    return this.router.navigate(['/auth/login']);
+
+          onSubmit() {
+          //  console.log(this.form.value);
+            const user = {
+              nom: this.form.value.nom,
+              prenom: this.form.value.prenom,
+              date_naissance: this.form.value.date_naissance,
+              email: this.form.value.email,
+              mot_de_passe: this.form.value.mot_de_passe,
+              telephone: this.form.value.telephone,
+              nationalite: this.form.value.nationalite,
+              adresse: this.form.value.adresse,
+            };
+            
+            this.apiService.createUser(JSON.stringify(user)).subscribe((response) => console.log(response));
+            return this.router.navigate(['/login']);
   }
 }
