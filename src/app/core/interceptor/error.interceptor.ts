@@ -4,6 +4,7 @@ import {
   HttpHandler,
   HttpEvent,
   HttpInterceptor,
+  HttpErrorResponse,
 } from '@angular/common/http';
 import { Observable, catchError, throwError } from 'rxjs';
 import { AuthService } from '../service/auth.service';
@@ -17,12 +18,15 @@ export class ErrorInterceptor implements HttpInterceptor {
     next: HttpHandler
   ): Observable<HttpEvent<any>> {
     return next.handle(request).pipe(
-      catchError((err) => {
-        if (err.status === 401) {
-          this.authService.logout();
+      catchError((error) => {
+        if (error.status === 0) {
+          console.log('An error occurred:', error.error);
+          
+        } else {
+          console.error(
+            `Backend returned code ${error.status}, body was: `, error.error);
         }
-        const error = err.error.message || err.statusText;
-        return throwError(error);
+        return throwError(() => new Error('Something bad happened; please try again later.'))
       })
     );
   }
