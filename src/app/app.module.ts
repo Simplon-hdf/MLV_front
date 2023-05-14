@@ -7,7 +7,7 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { CoreModule } from './core/core.module';
 import { SharedModule } from './shared/shared.module';
 import { ModulesModule } from './modules/modules.module';
-import { InterceptorModule } from './core/interceptor/interceptor.module';
+
 
 
 
@@ -23,7 +23,6 @@ import { InterceptorModule } from './core/interceptor/interceptor.module';
     CoreModule,
     SharedModule,
     ModulesModule,
-    InterceptorModule,
   ],
   bootstrap: [AppComponent]
 })
