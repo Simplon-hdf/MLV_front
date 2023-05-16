@@ -1,7 +1,7 @@
-import { Component } from '@angular/core';
-import { FormControl, FormGroup, Validators } from '@angular/forms';
-import { ApiService } from '../../core/service/api.service';
-import { Router } from '@angular/router';
+import {Component} from '@angular/core';
+import {FormControl, FormGroup, Validators} from '@angular/forms';
+import {Router} from '@angular/router';
+import {HttpClient} from "@angular/common/http";
 
 @Component({
   selector: 'app-register',
@@ -10,9 +10,10 @@ import { Router } from '@angular/router';
 })
 export class RegisterComponent {
   constructor(
-    private apiService: ApiService,
+    private httpClient: HttpClient,
     private router: Router,
   ) {}
+  private apiUrl = 'http://localhost:3000/auth/signup/jeune';
 
   form = new FormGroup({
     nom: new FormControl('', Validators.required),
@@ -26,20 +27,34 @@ export class RegisterComponent {
   });
 
 
-          onSubmit() {
-          //  console.log(this.form.value);
-            const user = {
-              nom: this.form.value.nom,
-              prenom: this.form.value.prenom,
-              date_naissance: this.form.value.date_naissance,
-              email: this.form.value.email,
-              mot_de_passe: this.form.value.mot_de_passe,
-              telephone: this.form.value.telephone,
-              nationalite: this.form.value.nationalite,
-              adresse: this.form.value.adresse,
-            };
-            
-            this.apiService.createUser(JSON.stringify(user)).subscribe((response) => console.log(response));
-            return this.router.navigate(['/login']);
+  async onSubmit() {
+    const Users = {
+      nom: this.form.value.nom || '',
+      prenom: this.form.value.prenom || '',
+      date_naissance: new Date() || '',
+      email: this.form.value.email || '',
+      mot_de_passe: this.form.value.mot_de_passe || '',
+      telephone: this.form.value.telephone  || '',
+      nationalite: this.form.value.nationalite  || '',
+      adresse: this.form.value.adresse || '',
+
+    }
+    //create user post request
+
+    let reponse =  this.httpClient.post(this.apiUrl, Users)
+      .subscribe(
+        (val) => {
+          console.log("POST call successful value returned in body",
+            val);
+        },
+        response => {
+          console.log("POST call in error", response);
+
+        },
+        () => {
+          console.log("The POST observable is now completed.");
+        }
+      );
+    return this.router.navigate(['/login']);
   }
 }
