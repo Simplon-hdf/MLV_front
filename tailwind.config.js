@@ -3,10 +3,13 @@ module.exports = {
     content: ["./src/**/*.{html,js}"],
     theme: {
       extend: {
-      mobile: "640px",
-      tablet: "768px",
-      desktop: "1024px",
+      sm: "640px",
+      md: "768px",
+      lg: "1024px",
       },
+      colors: {
+        "mlvGreen" : "#25995C",
+      }
     },
     plugins: [],
   }
