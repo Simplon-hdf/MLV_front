@@ -1,27 +1,32 @@
 <app-navbar></app-navbar>
-<div class="relative mt-20">
-<div class="w-full overflow-hidden bg-phoneLogin bg-cover h-screen
+<div class="lg:relative lg:mt-28">
+<div class="w-full overflow-hidden sm:overflow-y-auto md:overflow-y-auto  bg-phoneLogin bg-cover h-screen
 sm:bg-phoneLogin sm:bg-center
-md:bg-phoneLogin md:bg-cover md:fixed 
-lg:bg-login
+md:bg-phoneLogin md:bg-cover md:bg-centermd:fixed 
+lg:bg-login lg:bg-cover lg:bg-no-repeat lg:fixed
 xl:bg-login
     ">
   <!-- Titre de connexion -->
-  <!-- <div class="lg:flex lg:float-left lg:flex-col lg:ml-20 lg:mt-0"> -->
-  <div class="mt-40 sm:mt-24 md:mt-60">
-    <h3 class=" text-4xl mb-0 font-medium text-center text-white
-    sm:text-lg sm:hidden
+  <div class="lg:flex lg:float-left lg:flex-col lg:ml-20 lg:mt-0">
+  <div class="mt-40 sm:mt-24 md:mt-56">
+    <h3 class="text-4xl mb-0 font-medium text-center text-white
+    sm:text-lg 
     md:block md:text-4xl md:mb-10
+    lg:mb-8
     ">
       Connexion
     </h3>
 </div>
 <!-- Formulaire -->
     <form class="flex flex-col mt-4 pt-10
-    sm:pt-0">
+    sm:pt-0
+    ">
+      <!-- Email -->
       <div class="flex items-center justify-center">
         <div class="w-60 mt-4 mb-6 
-        sm:mt-0 sm:mb-0">
+        sm:mt-0 sm:mb-0
+        lg:mb-0">
+        
           <label class="text-white text-lg
           sm:text-sm
           md:text-lg 
@@ -29,16 +34,18 @@ xl:bg-login
           <input
             class="block w-full px-14 py-2 bg-white border rounded-lg 
             focus:border-mlvGray focus:ring-opacity-40 focus:outline-none focus:ring focus:ring-mlvGray
-            md:mb-4"
+            md:mb-0
+            lg:mb-2"
             type="email"
             aria-label="Email Address"
           />
         </div>
       </div>
-
+      <!-- Mot de passe -->
       <div class="flex flex-col">
         <div class="flex items-center justify-center">
           <div class="w-60 mt-4 mb-10 sm:mb-2 md:mb-10">
+            
             <label class="text-white text-lg 
             sm:text-sm
             md:text-lg"
@@ -61,6 +68,7 @@ xl:bg-login
       <!-- Bouton Valider -->
       <div class="grid grid-col-1 justify-end mt-4
       sm:justify-center sm:mt-0
+      lg:mt-0
        ">
        <button
        type="submit"
@@ -70,6 +78,7 @@ xl:bg-login
        focus:outline-none focus:ring focus:ring-mlvGreen 
        sm:w-60 sm:ml-4
        md:w-60
+       lg:mb-0
      "
      >
        <span>Valider</span>
@@ -92,4 +101,4 @@ xl:bg-login
     </div>
   </div>
 </div>
-<!-- </div> -->
+</div>
