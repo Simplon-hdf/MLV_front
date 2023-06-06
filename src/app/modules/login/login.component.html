@@ -1,14 +1,17 @@
 <app-navbar></app-navbar>
-<div class="w-full overflow-hidden bg-phoneLogin bg-cover h-screen 
+<div class="relative mt-20">
+<div class="w-full overflow-hidden bg-phoneLogin bg-cover h-screen
 sm:bg-phoneLogin sm:bg-center
-md:bg-login 
+md:bg-phoneLogin md:bg-cover md:fixed 
 lg:bg-login
 xl:bg-login
     ">
   <!-- Titre de connexion -->
-  <div class="mt-40 sm:mt-24">
-    <h3 class="text-4xl mb-0 font-medium text-center text-white
+  <!-- <div class="lg:flex lg:float-left lg:flex-col lg:ml-20 lg:mt-0"> -->
+  <div class="mt-40 sm:mt-24 md:mt-60">
+    <h3 class=" text-4xl mb-0 font-medium text-center text-white
     sm:text-lg sm:hidden
+    md:block md:text-4xl md:mb-10
     ">
       Connexion
     </h3>
@@ -21,9 +24,12 @@ xl:bg-login
         sm:mt-0 sm:mb-0">
           <label class="text-white text-lg
           sm:text-sm
+          md:text-lg 
           ">Email :</label>
           <input
-            class="block w-full px-14 py-2 bg-white border rounded-lg focus:border-mlvGray focus:ring-opacity-40 focus:outline-none focus:ring focus:ring-mlvGray"
+            class="block w-full px-14 py-2 bg-white border rounded-lg 
+            focus:border-mlvGray focus:ring-opacity-40 focus:outline-none focus:ring focus:ring-mlvGray
+            md:mb-4"
             type="email"
             aria-label="Email Address"
           />
@@ -32,9 +38,10 @@ xl:bg-login
 
       <div class="flex flex-col">
         <div class="flex items-center justify-center">
-          <div class="w-60 mt-4 mb-10 sm:mb-2">
+          <div class="w-60 mt-4 mb-10 sm:mb-2 md:mb-10">
             <label class="text-white text-lg 
-            sm:text-sm"
+            sm:text-sm
+            md:text-lg"
             >Mot de passe :</label>
             <input
               class="block w-full px-4 py-2 mt-0 bg-white border rounded-lg focus:border-mlvGray focus:ring-opacity-40 focus:outline-none focus:ring focus:ring-mlvGray"
@@ -43,32 +50,46 @@ xl:bg-login
               aria-label="Password"
             />
             <a href="#" class="text-sm text-white hover:text-mlvGray
-            sm:text-xs"
+            sm:text-xs
+            md:text-sm"
               >Mot de passe oublié?</a
             >
           </div>
         </div>
       </div>
-      <div class="grid grid-col-1 justify-end sm:justify-center sm:mt-0 mt-4">
-        <button
-          class="  mb-4 mr-4 px-6 py-2 text-lg font-medium tracking-wide text-white capitalize transition-colors duration-300 transform bg-mlvGreen rounded-lg 
-          hover:bg-white hover:text-black active:bg-mlvGray
-          focus:outline-none focus:ring focus:ring-mlvGray focus:ring-opacity-50
-          sm:mb-0 sm:text-sm"
-        >
-          Valider
-        </button>
+      
+      <!-- Bouton Valider -->
+      <div class="grid grid-col-1 justify-end mt-4
+      sm:justify-center sm:mt-0
+       ">
+       <button
+       type="submit"
+      
+       class="mb-6 mr-4 w-36 px-6 py-3 text-base text-white capitalize transition-colors duration-300 transform bg-mlvGreen rounded-lg 
+       hover:bg-white hover:text-mlvGreen hover:border hover:border-2 
+       focus:outline-none focus:ring focus:ring-mlvGreen 
+       sm:w-60 sm:ml-4
+       md:w-60
+     "
+     >
+       <span>Valider</span>
+     </button>
       </div>
     </form>
+    <!-- Phrase pas de compte ? redirection pré-inscription -->
     <div class="flex items-center justify-center py-4 text-center">
       <span class="text-sm text-white
-      sm:text-xs"
+      sm:text-xs
+      md:text-sm"
       >Pas de compte ?</span>
       <a
         href="#"
         class="mx-2 text-sm font-bold text-white hober:text-mlvGray hover:underline
         sm:text-xs"
+        routerLink="/inscription"
         >Pré-inscription</a
       >
     </div>
   </div>
+</div>
+<!-- </div> -->
