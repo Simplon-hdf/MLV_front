@@ -14,7 +14,12 @@ module.exports = {
         "mlvGray": "#D9D9D9",
         "white": "#FFFFFF",
         "black": "#000000",
-      }
+      },
+      backgroundImage: {
+        'register': "url('assets/images/register.jpg')",
+        'phoneLogin': "url('assets/images/phone.png')",
+        'login': "url('assets/images/login.png')",
+      },
     },
     plugins: [],
   }

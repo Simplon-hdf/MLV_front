@@ -1,2 +1,107 @@
 <app-navbar></app-navbar>
-<p>login works!</p>
+<div class="lg:relative lg:mt-28">
+  <!-- image background -->
+<div class="w-full overflow-hidden sm:overflow-y-auto md:overflow-y-auto  bg-phoneLogin bg-cover h-screen
+sm:bg-phoneLogin sm:bg-center
+md:bg-phoneLogin md:bg-cover md:bg-centermd:fixed 
+lg:bg-login lg:bg-cover lg:bg-no-repeat lg:fixed
+xl:bg-login xl:bg-cover xl:bg-no-repeat xl:fixed
+    ">
+  <!-- titre et formulaire -->
+  <div class="lg:flex lg:float-left lg:flex-col lg:ml-40 lg:mt-0">
+  
+    <!-- Titre de connexion -->
+    <div class="mt-40 sm:mt-24 md:mt-56">
+    <h3 class="text-4xl mb-0 font-medium text-center text-white
+    sm:text-xl 
+    md:block md:text-4xl md:mb-10
+    lg:mb-8
+    ">
+      Se connecter
+    </h3>
+</div>
+<!-- Formulaire -->
+    <form class="flex flex-col mt-4 pt-10
+    sm:pt-0
+    ">
+      <!-- Email -->
+      <div class="flex items-center justify-center">
+        <div class="w-60 mt-4 mb-6 
+        sm:mt-0 sm:mb-0
+        lg:mb-0">
+        
+          <label class="text-white text-lg
+          sm:text-sm
+          md:text-lg 
+          ">Email :</label>
+          <input
+            class="block w-full px-14 py-2 bg-white border rounded-lg 
+            focus:border-mlvGray focus:ring-opacity-40 focus:outline-none focus:ring focus:ring-mlvGray
+            md:mb-0
+            lg:mb-2"
+            type="email"
+            aria-label="Email Address"
+          />
+        </div>
+      </div>
+      <!-- Mot de passe -->
+      <div class="flex flex-col">
+        <div class="flex items-center justify-center">
+          <div class="w-60 mt-4 mb-10 sm:mb-2 md:mb-10">
+            
+            <label class="text-white text-lg 
+            sm:text-sm
+            md:text-lg"
+            >Mot de passe :</label>
+            <input
+              class="block w-full px-4 py-2 mt-0 bg-white border rounded-lg focus:border-mlvGray focus:ring-opacity-40 focus:outline-none focus:ring focus:ring-mlvGray"
+              type="password"
+             
+              aria-label="Password"
+            />
+            <a href="#" class="text-sm text-white hover:text-mlvGray
+            sm:text-xs
+            md:text-sm"
+              >Mot de passe oublié?</a
+            >
+          </div>
+        </div>
+      </div>
+      
+      <!-- Bouton Valider -->
+      <div class="grid grid-col-1 justify-end mt-4
+      sm:justify-center sm:mt-0
+      lg:mt-0
+       ">
+       <button
+       type="submit"
+      
+       class="mb-6 mr-4 w-36 px-6 py-3 text-base text-white capitalize transition-colors duration-300 transform bg-mlvGreen rounded-lg 
+       hover:bg-white hover:text-mlvGreen hover:border hover:border-2 
+       focus:outline-none focus:ring focus:ring-mlvGreen 
+       sm:w-60 sm:ml-4
+       md:w-60
+       lg:mb-0
+     "
+     >
+       <span>Valider</span>
+     </button>
+      </div>
+    </form>
+    <!-- Phrase pas de compte ? redirection pré-inscription -->
+    <div class="flex items-center justify-center py-4 text-center">
+      <span class="text-sm text-white
+      sm:text-xs
+      md:text-sm"
+      >Pas de compte ?</span>
+      <a
+        href="#"
+        class="mx-2 text-sm font-bold text-white hober:text-mlvGray hover:underline
+        sm:text-xs"
+        routerLink="/inscription"
+        >Pré-inscription</a
+      >
+    </div>
+  </div>
+</div>
+</div>
