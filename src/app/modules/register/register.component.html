@@ -1,6 +1,12 @@
 <app-navbar></app-navbar>
 
-<section class="bg-white">
+<section class=" flex flex-col bg-white">
+  <div class="pt-32 self-center text-3xl mb-0
+  sm:hidden 
+  md:hidden
+  lg:hidden
+  xl:hidden
+    ">Pré-inscription</div>
   <div class="flex justify-center items-center min-h-screen sm:flex-rows xl:float-right">
 
     <!-- Image register -->
@@ -14,14 +20,14 @@
 
     <!-- formulaire d'inscription -->
     <div class="flex flex-col mt-16 
-    sm:ml-80 sm:mt-24 sm:mr-10
+    sm:ml-80 sm:mt-20 sm:mr-10
     md:mt-32 md:mr-0
     lg:ml-96
     xl:mr-48
     ">
-
+    
       <!-- Identité -->
-      <div class="self-center text-lg pt-12 
+      <div class="self-start text-lg pt-4
       sm:pt-0 
       md:self-start">Vos informations :</div>
       <form
@@ -71,7 +77,7 @@
 
         <!-- Adresse -->
         <div class="flex flex-col">
-          <div class="self-center text-lg pt-0 md:self-start">Votre adresse :</div>
+          <div class="self-start text-lg pt-0 md:self-start">Votre adresse :</div>
           <div class="w-full p-8 bg-mlvGray md:px-14 rounded-lg">
             <div>
               <label class="block text-base">Numéro :</label>
@@ -114,7 +120,7 @@
 
         <!-- Information contact -->
         <div class="flex flex-col">
-          <div class="self-center text-lg pt-0 md:self-start">Information de contact :</div>
+          <div class="self-start text-lg pt-0 md:self-start">Information de contact :</div>
           <div class="w-full p-8 bg-mlvGray md:px-14 rounded-lg">
             <div>
               <label class="block text-base">Numéro de téléphone :</label>
@@ -139,7 +145,7 @@
 
         <!-- Validation -->
         <div class="flex flex-col">
-          <div class="self-center text-lg pt-0 md:self-start">Validation :</div>
+          <div class="self-start text-lg pt-0 md:self-start">Validation :</div>
           <div class="w-full p-8 md:px-14 bg-mlvGray rounded-lg">
             <div class="">
               <label class="block text-base">Mot de passe</label>
