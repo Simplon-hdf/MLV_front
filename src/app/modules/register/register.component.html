@@ -1,30 +1,35 @@
 <app-navbar></app-navbar>
 
-<section class="bg-white">
+<section class=" flex flex-col bg-white">
+  <div class="pt-32 self-center text-3xl mb-0
+  sm:hidden 
+  md:hidden
+  lg:hidden
+  xl:hidden
+    ">Pré-inscription</div>
   <div class="flex justify-center items-center min-h-screen sm:flex-rows xl:float-right">
 
     <!-- Image register -->
     <div
-      class="hidden bg-cover z-0
+      class="hidden bg-register bg-cover z-0
       sm:block sm:h-3/4 sm:w-1/3 sm:object-contain sm:m-10 sm:fixed sm:left-2 sm:right-2 sm:top-12 sm:bg-center
       md:block md:h-3/4 md:mt-28 md:bg-center md:ml-12
       lg:block lg:w-2/5 lg:ml-6 lg:bg-center
       xl:block xl:w-2/5 xl:ml-14 xl:bg-center xl:bg-top"
-      style="background-image: url('assets/images/register.jpg')"
     ></div>
 
     <!-- formulaire d'inscription -->
     <div class="flex flex-col mt-16 
-    sm:ml-80 sm:mt-24 sm:mr-10
+    sm:ml-80 sm:mt-20 sm:mr-10
     md:mt-32 md:mr-0
     lg:ml-96
     xl:mr-48
     ">
-
+    
       <!-- Identité -->
-      <div class="self-center text-lg pt-12 
+      <div class="self-start text-lg pt-4
       sm:pt-0 
-      md:self-start">Votre identité :</div>
+      md:self-start">Vos informations :</div>
       <form
         [formGroup]="form"
         (ngSubmit)="onSubmit()"
@@ -72,7 +77,7 @@
 
         <!-- Adresse -->
         <div class="flex flex-col">
-          <div class="self-center text-lg pt-0 md:self-start">Votre adresse :</div>
+          <div class="self-start text-lg pt-0 md:self-start">Votre adresse :</div>
           <div class="w-full p-8 bg-mlvGray md:px-14 rounded-lg">
             <div>
               <label class="block text-base">Numéro :</label>
@@ -115,7 +120,7 @@
 
         <!-- Information contact -->
         <div class="flex flex-col">
-          <div class="self-center text-lg pt-0 md:self-start">Information de contact :</div>
+          <div class="self-start text-lg pt-0 md:self-start">Information de contact :</div>
           <div class="w-full p-8 bg-mlvGray md:px-14 rounded-lg">
             <div>
               <label class="block text-base">Numéro de téléphone :</label>
@@ -140,7 +145,7 @@
 
         <!-- Validation -->
         <div class="flex flex-col">
-          <div class="self-center text-lg pt-0 md:self-start">Validation :</div>
+          <div class="self-start text-lg pt-0 md:self-start">Validation :</div>
           <div class="w-full p-8 md:px-14 bg-mlvGray rounded-lg">
             <div class="">
               <label class="block text-base">Mot de passe</label>
@@ -178,24 +183,11 @@
             [disabled]="!form.valid"
             class="mb-6 w-60 px-6 py-3 text-base text-white capitalize transition-colors duration-300 transform bg-mlvGreen rounded-lg 
             hover:bg-white hover:text-mlvGreen hover:border hover:border-2 
-            focus:outline-none focus:ring focus:ring-mlvBlue focus:ring-opacity-50
+            focus:outline-none focus:ring focus:ring-mlvGreen 
             
           "
           >
             <span>Envoyer</span>
-
-            <!-- <svg
-                xmlns="http://www.w3.org/2000/svg"
-                class="w-5 h-5 rtl:-scale-x-100"
-                viewBox="0 0 20 20"
-                fill="currentColor"
-              >
-                <path
-                  fill-rule="evenodd"
-                  d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z"
-                  clip-rule="evenodd"
-                />
-              </svg> -->
           </button>
         </div>
       </form>
