@@ -19,6 +19,7 @@ module.exports = {
         'register': "url('assets/images/register.jpg')",
         'phoneLogin': "url('assets/images/phone.png')",
         'login': "url('assets/images/login.png')",
+        'home': "url('assets/images/home.png')",
       },
     },
     plugins: [],
