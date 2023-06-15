@@ -7,15 +7,15 @@
   lg:hidden
   xl:hidden
     ">Pré-inscription</div>
-  <div class="flex justify-center items-center min-h-screen sm:flex-rows xl:float-right">
+  <div class="flex justify-center items-center min-h-screen sm:flex-rows">
 
     <!-- Image register -->
     <div
-      class="hidden bg-register bg-cover z-0
+      class="hidden bg-register bg-cover z-0 fixed
       sm:block sm:h-3/4 sm:w-1/3 sm:object-contain sm:m-10 sm:fixed sm:left-2 sm:right-2 sm:top-12 sm:bg-center
       md:block md:h-3/4 md:mt-28 md:bg-center md:ml-12
       lg:block lg:w-2/5 lg:ml-6 lg:bg-center
-      xl:block xl:w-2/5 xl:ml-14 xl:bg-center xl:bg-top"
+      xl:block xl:h-3/4 xl:ml-8 xl:bg-center xl:bg-top xl:left-16"
     ></div>
 
     <!-- formulaire d'inscription -->
@@ -23,13 +23,15 @@
     sm:ml-80 sm:mt-20 sm:mr-10
     md:mt-32 md:mr-0
     lg:ml-96
-    xl:mr-48
+    xl:absolute xl:left-1/4 xl:top-2 xl:w-1/3
     ">
     
       <!-- Identité -->
       <div class="self-start text-lg pt-4
       sm:pt-0 
-      md:self-start">Vos informations :</div>
+      md:self-start
+      xl:text-2xl
+      ">Vos informations :</div>
       <form
         [formGroup]="form"
         (ngSubmit)="onSubmit()"
@@ -37,82 +39,90 @@
       >
         <div class="bg-mlvGray p-8 md:px-14 rounded-lg xl:px-18">
           <div>
-            <label class="block text-base">Nom :</label>
+            <label class="block text-base xl:text-lg">Nom :</label>
             <input
               type="text"
-              placeholder="John"
+              
               formControlName="nom"
-              class="block  w-full px-5 py-3 text-gray-700 placeholder-gray-400 bg-white border border-gray-200 rounded-lg dark:placeholder-gray-600 dark:bg-gray-900 dark:text-gray-300 dark:border-gray-700 focus:border-blue-400 dark:focus:border-blue-400 focus:ring-blue-400 focus:outline-none focus:ring focus:ring-opacity-40"
+              class="block  w-full px-5 py-3 bg-white border border-gray-200 rounded-lg 
+              focus:border-blue-400 focus:ring-blue-400 focus:outline-none focus:ring focus:ring-opacity-40"
             />
           </div>
 
           <div>
-            <label class="block mt-4 mb-0 text-base">Prénom :</label>
+            <label class="block mt-4 mb-0 text-base xl:text-lg">Prénom :</label>
             <input
               type="text"
-              placeholder="Snow"
+              
               formControlName="prenom"
-              class="block w-full px-5 py-3 text-gray-700 placeholder-gray-400 bg-white border border-gray-200 rounded-lg dark:placeholder-gray-600 dark:bg-gray-900 dark:text-gray-300 dark:border-gray-700 focus:border-blue-400 dark:focus:border-blue-400 focus:ring-blue-400 focus:outline-none focus:ring focus:ring-opacity-40"
+              class="block w-full px-5 py-3 bg-white border border-gray-200 rounded-lg 
+              focus:border-blue-400 focus:ring-blue-400 focus:outline-none focus:ring focus:ring-opacity-40"
             />
           </div>
           <div>
-            <label class="block mt-4 text-base">Date de naissance :</label>
+            <label class="block mt-4 text-base xl:text-lg">Date de naissance :</label>
             <input
               type="text"
-              placeholder="Snow"
+             
               formControlName="date_naissance"
-              class="block w-full px-5 py-3 text-gray-700 placeholder-gray-400 bg-white border border-gray-200 rounded-lg dark:placeholder-gray-600 dark:bg-gray-900 dark:text-gray-300 dark:border-gray-700 focus:border-blue-400 dark:focus:border-blue-400 focus:ring-blue-400 focus:outline-none focus:ring focus:ring-opacity-40"
+              class="block w-full px-5 py-3 bg-white border border-gray-200 rounded-lg
+               focus:border-blue-400 focus:ring-blue-400 focus:outline-none focus:ring focus:ring-opacity-40"
             />
           </div>
           <div>
-            <label class="block mt-4 text-base">Nationalité :</label>
+            <label class="block mt-4 text-base xl:text-lg">Nationalité :</label>
             <input
               type="text"
-              placeholder="Snow"
+             
               formControlName="nationalite"
-              class="block w-full px-5 py-3 bg-white border rounded-lg focus:border-blue-400 focus:ring-blue-400 focus:outline-none focus:ring focus:ring-opacity-40"
+              class="block w-full px-5 py-3 bg-white border rounded-lg 
+              focus:border-blue-400 focus:ring-blue-400 focus:outline-none focus:ring focus:ring-opacity-40"
             />
           </div>
         </div>
 
         <!-- Adresse -->
         <div class="flex flex-col">
-          <div class="self-start text-lg pt-0 md:self-start">Votre adresse :</div>
+          <div class="self-start text-lg pt-0 md:self-start xl:text-2xl">Votre adresse :</div>
           <div class="w-full p-8 bg-mlvGray md:px-14 rounded-lg">
             <div>
-              <label class="block text-base">Numéro :</label>
+              <label class="block text-base xl:text-lg">Numéro :</label>
               <input
                 type="text"
                 
                 formControlName="telephone"
-                class="block w-full px-5 py-3 text-gray-700 placeholder-gray-400 bg-white border border-gray-200 rounded-lg dark:placeholder-gray-600 dark:bg-gray-900 dark:text-gray-300 dark:border-gray-700 focus:border-blue-400 dark:focus:border-blue-400 focus:ring-blue-400 focus:outline-none focus:ring focus:ring-opacity-40"
+                class="block w-full px-5 py-3  bg-white border border-gray-200 rounded-lg 
+                focus:border-blue-400 focus:ring-blue-400 focus:outline-none focus:ring focus:ring-opacity-40"
               />
             </div>
             <div>
-              <label class="block mt-4 text-base">Rue :</label>
+              <label class="block mt-4 text-base xl:text-lg">Rue :</label>
               <input
                 type="text"
                
                 formControlName="nationalite"
-                class="block w-full px-5 py-3 text-gray-700 placeholder-gray-400 bg-white border border-gray-200 rounded-lg dark:placeholder-gray-600 dark:bg-gray-900 dark:text-gray-300 dark:border-gray-700 focus:border-blue-400 dark:focus:border-blue-400 focus:ring-blue-400 focus:outline-none focus:ring focus:ring-opacity-40"
+                class="block w-full px-5 py-3 bg-white border border-gray-200 rounded-lg 
+                focus:border-blue-400 focus:ring-blue-400 focus:outline-none focus:ring focus:ring-opacity-40"
               />
             </div>
             <div>
-              <label class="block mt-4 text-base">Code postale :</label>
+              <label class="block mt-4 text-base xl:text-lg">Code postale :</label>
               <input
                 type="text"
               
                 formControlName="telephone"
-                class="block w-full px-5 py-3 text-gray-700 placeholder-gray-400 bg-white border border-gray-200 rounded-lg dark:placeholder-gray-600 dark:bg-gray-900 dark:text-gray-300 dark:border-gray-700 focus:border-blue-400 dark:focus:border-blue-400 focus:ring-blue-400 focus:outline-none focus:ring focus:ring-opacity-40"
+                class="block w-full px-5 py-3 bg-white border border-gray-200 rounded-lg 
+                focus:border-blue-400 focus:ring-blue-400 focus:outline-none focus:ring focus:ring-opacity-40"
               />
             </div>
             <div>
-              <label class="block mt-4 text-base">Ville :</label>
+              <label class="block mt-4 text-base xl:text-lg">Ville :</label>
               <input
                 type="text"
                 
                 formControlName="nationalite"
-                class="block w-full px-5 py-3 text-gray-700 placeholder-gray-400 bg-white border border-gray-200 rounded-lg dark:placeholder-gray-600 dark:bg-gray-900 dark:text-gray-300 dark:border-gray-700 focus:border-blue-400 dark:focus:border-blue-400 focus:ring-blue-400 focus:outline-none focus:ring focus:ring-opacity-40"
+                class="block w-full px-5 py-3 bg-white border border-gray-200 rounded-lg 
+                focus:border-blue-400 focus:ring-blue-400 focus:outline-none focus:ring focus:ring-opacity-40"
               />
             </div>
           </div>
@@ -120,24 +130,26 @@
 
         <!-- Information contact -->
         <div class="flex flex-col">
-          <div class="self-start text-lg pt-0 md:self-start">Information de contact :</div>
+          <div class="self-start text-lg pt-0 md:self-start xl:text-2xl">Information de contact :</div>
           <div class="w-full p-8 bg-mlvGray md:px-14 rounded-lg">
             <div>
-              <label class="block text-base">Numéro de téléphone :</label>
+              <label class="block text-base xl:text-lg">Numéro de téléphone :</label>
               <input
                 type="text"
-                placeholder="XXX-XX-XXXX-XXX"
+                
                 formControlName="telephone"
-                class="block w-full px-5 py-3 text-gray-700 placeholder-gray-400 bg-white border border-gray-200 rounded-lg dark:placeholder-gray-600 dark:bg-gray-900 dark:text-gray-300 dark:border-gray-700 focus:border-blue-400 dark:focus:border-blue-400 focus:ring-blue-400 focus:outline-none focus:ring focus:ring-opacity-40"
+                class="block w-full px-5 py-3 bg-white border border-gray-200 rounded-lg 
+                focus:border-blue-400 focus:ring-blue-400 focus:outline-none focus:ring focus:ring-opacity-40"
               />
             </div>
             <div>
-              <label class="block mt-4 text-base">Adresse email :</label>
+              <label class="block mt-4 text-base xl:text-lg">Adresse email :</label>
               <input
                 type="email"
-                placeholder="johnsnow@example.com"
+          
                 formControlName="email"
-                class="block w-full px-5 py-3 text-gray-700 placeholder-gray-400 bg-white border border-gray-200 rounded-lg dark:placeholder-gray-600 dark:bg-gray-900 dark:text-gray-300 dark:border-gray-700 focus:border-blue-400 dark:focus:border-blue-400 focus:ring-blue-400 focus:outline-none focus:ring focus:ring-opacity-40"
+                class="block w-full px-5 py-3 bg-white border border-gray-200 rounded-lg
+                 focus:border-blue-400 focus:ring-blue-400 focus:outline-none focus:ring focus:ring-opacity-40"
               />
             </div>
           </div>
@@ -145,31 +157,33 @@
 
         <!-- Validation -->
         <div class="flex flex-col">
-          <div class="self-start text-lg pt-0 md:self-start">Validation :</div>
+          <div class="self-start text-lg pt-0 md:self-start xl:text-2xl">Validation :</div>
           <div class="w-full p-8 md:px-14 bg-mlvGray rounded-lg">
             <div class="">
-              <label class="block text-base">Mot de passe</label>
+              <label class="block text-base xl:text-lg">Mot de passe</label>
               <div class="">
                 <input
                   type="password"
-                  placeholder="Enter your password"
+                 
                   formControlName="mot_de_passe"
-                  class="block w-full px-5 py-3 text-gray-700 placeholder-gray-400 bg-white border border-gray-200 rounded-lg dark:placeholder-gray-600 dark:bg-gray-900 dark:text-gray-300 dark:border-gray-700 focus:border-blue-400 dark:focus:border-blue-400 focus:ring-blue-400 focus:outline-none focus:ring focus:ring-opacity-40"
+                  class="block w-full px-5 py-3 bg-white border border-gray-200 rounded-lg 
+                  focus:border-blue-400 focus:ring-blue-400 focus:outline-none focus:ring focus:ring-opacity-40"
                 />
               </div>
             </div>
             <div>
               <div class="">
-                <label class="block mt-4 text-base">
+                <label class="block mt-4 text-base xl:text-lg">
                   Confirmation du mot de passe</label
                 >
               </div>
               <div class="flex items-center justify-center">
                 <input
                   type="password"
-                  placeholder="Enter your password"
+                 
                   formControlName="mot_de_passe"
-                  class="block w-full px-5 py-3 text-gray-700 placeholder-gray-400 bg-white border border-gray-200 rounded-lg dark:placeholder-gray-600 dark:bg-gray-900 dark:text-gray-300 dark:border-gray-700 focus:border-blue-400 dark:focus:border-blue-400 focus:ring-blue-400 focus:outline-none focus:ring focus:ring-opacity-40"
+                  class="block w-full px-5 py-3 bg-white border rounded-lg 
+                  focus:border-blue-400 focus:ring-blue-400 focus:outline-none focus:ring focus:ring-opacity-40"
                 />
               </div>
             </div>
